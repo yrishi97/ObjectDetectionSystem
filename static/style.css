@@ -273,18 +273,6 @@ summary {
     display: block;
 }
 
-audio,
-canvas,
-video {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-}
-
-* Remove excess height in iOS 5 devices. */ audio:not([controls]) {
-    display: none;
-    height: 0;
-}
 
 [hidden] {
     display: none;
@@ -489,22 +477,9 @@ fieldset {
     padding: 0.35em 0.625em 0.75em;
 }
 
-legend {
-    border: 0;
-    padding: 0;
-    white-space: normal;
-    *margin-left: -7px;
-}
 
-button,
-input,
-select,
-textarea {
-    font-size: 100%;
-    /margin: 0;
-    vertical-align: baseline;
-    *vertical-align: middle;
-}
+
+
 
 button,
 input {
@@ -517,7 +492,7 @@ input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button;
     cursor: pointer;
-    *overflow: visible;
+    overflow: visible;
 }
 
 button[disabled],
@@ -529,8 +504,8 @@ input[type="checkbox"],
 input[type="radio"] {
     box-sizing: border-box;
     padding: 0;
-    *height: 13px;
-    *width: 13px;
+    height: 13px;
+    width: 13px;
 }
 
 input[type="search"] {
@@ -1729,7 +1704,7 @@ ul.slides li {
 /* Animate */
 
 
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 
 /*!
 Animate.css - http://daneden.me/animate
