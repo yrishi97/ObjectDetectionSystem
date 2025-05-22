@@ -1,22 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
     <title>Object Detection</title>
 </head>
+
 <body>
-    <h1>Object Detection System</h1>
 
-    <h2>Upload Image or Video for Detection</h2>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <button type="submit">Upload</button>
-    </form>
+    <div class="navbar">
+        <div>
 
-    <h2>Live Object Detection</h2>
-    <form action="/start-live-detection" method="POST">
-        <button type="submit">Start Live Detection</button>
-    </form>
+            <div class="row">
+
+                <h1 class="animated fadeInDown">
+                    <span style="color:#FFE800;">O</span><span style="color: #ffffff">BJECT
+                        <span style="color:#FFE800;">D</span><span style="color: #ffffff">ETECTION
+                            <span style="color:#FFE800;">S</span><span style="color: #ffffff">YSTEM
+                </h1>
+            </div>
+
+        </div>
+        <div style="display: flex; justify-content: center; gap: 20px;">
+            <i style="color: #ffe800;" class="mdi mdi-magnify mdi-24px"></i>
+            <i style="color: #ffe800;" class="mdi mdi-information-varient mdi-24px"></i>
+            <i style="color: #FFE800;" class="mdi mdi-home mdi-24px"></i>
+        </div>
+    </div>
+
+    <div class="hero">
+        <video src="/static/Future1.mp4" autoplay muted loop></video>
+        <div class="row">
+            <!-- <div class="col-md-8 col-md-offset-1 inner"> -->
+            <h1 class="animated fadeInDown">
+                <span style="color:#E04343;">D</span><span>ETECT<br />
+                    <span style="color:#E04343;">A</span><span>NYTHING<br />
+                        <span style="color:#E04343;">A</span><span>NYWHERE<br />
+            </h1><!-- Title -->
+            <h3 class="animated fadeInUp delay-05s"><span class="rotate">Through Image Video or LiveFeed</span></h3>
+            <!-- Text Rotator -->
+            <!-- </div> -->
+        </div>
+    </div>
+
+
+
+    <div class="upload-section">
+        <h2> <span style="color: #E04343;">Upload Image or Video for Detection</span></h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input class="styled-file-input" type="file" name="file" required>
+            <button type="submit">UPLOAD</button>
+        </form>
+    </div>
+
+
+
+    <div class="live-section">
+        <h2> <span style="color: #889500;">Live Object Detection</span></h2>
+        <form action="/start-live-detection" method="POST">
+            <button type="submit">Start Live Detection</button>
+        </form>
+    </div>
+
+
+<div class="footer">
+    <span>Copyright © 2025<a href="https://yrishi97.github.io/Portfolio/index.html#portfolio" target="_blank"> Rishi Yadav</a>. All rights reserved.</span>
+    <span>Hand-Crafted and made with <i class="mdi mdi-heart"></i></span>
+</div>
+
+
 </body>
+
 </html>

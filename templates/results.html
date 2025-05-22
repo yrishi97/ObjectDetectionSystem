@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
     <title>Results</title>
 </head>
+
 <body>
-    <h1>Object Detection Results</h1>
-    <h2>Processed File:</h2>
-    {% if detected_file %}
+
+    <div class="navbar">
+        <div>
+
+            <div class="row">
+
+                <h1 class="animated fadeInDown">
+                    <span style="color:#FFE800;">O</span><span style="color: #ffffff">BJECT
+                        <span style="color:#FFE800;">D</span><span style="color: #ffffff">ETECTION
+                            <span style="color:#FFE800;">S</span><span style="color: #ffffff">YSTEM
+                </h1>
+            </div>
+
+        </div>
+        <div style="display: flex; justify-content: center; gap: 20px;">
+            <i style="color: #ffe800;" class="mdi mdi-magnify mdi-24px"></i>
+            <i style="color: #ffe800;" class="mdi mdi-information mdi-24px"></i>
+            <a href="http://127.0.0.1:5000/"><i style="color: #FFE800;" class="mdi mdi-home mdi-24px"></i></a>
+        </div>
+    </div>
+
+
+
+
+    <div class="result-section">
+        <h2>Processed File:</h2>
+        {% if detected_file %}
         {% if detected_file.endswith('.mp4') or detected_file.endswith('.avi') or detected_file.endswith('.mov') %}
-            <video width="640" height="480" controls>
-                <source src="{{ url_for('static', filename='detections/' + detected_file.split('/')[-1]) }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <video width="640" height="480" controls>
+            <source src="{{ url_for('static', filename='detections/' + detected_file.split('/')[-1]) }}"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         {% else %}
-            <img src="{{ url_for('static', filename='detections/' + detected_file.split('/')[-1]) }}" alt="Detected Image" />
+        <img width="640" src="{{ url_for('static', filename='detections/' + detected_file.split('/')[-1]) }}"
+            alt="Detected Image" />
+
+        <div style="margin-top: 10px;">
+            <span><a href="{{ url_for('static', filename='detections/' + detected_file.split('/')[-1]) }}" download
+                class="download-button">Download Image</a></span>
+        </div>
         {% endif %}
-    {% else %}
+        {% else %}
         <p>No results available.</p>
-    {% endif %}
+        {% endif %}
+    </div>
+
 </body>
+
 </html>

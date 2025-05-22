@@ -16,4 +16,4 @@ def detect_objects_in_image(image_path):
     annotated_image = results[0].plot()  # Plot the image with bounding boxes
     results[0].save(detected_image_path)  # Save the annotated image
 
-    return detected_image_path
+    return detected_image_path.replace('\\', '/')
